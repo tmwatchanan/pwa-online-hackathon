@@ -22,6 +22,7 @@ before_script:
   - npm install -g bower
   - npm install -g polymer-cli
   - npm install firebase-tools
+  - npm install web-component-tester
   - bower install
   - npm install
   - polymer install
