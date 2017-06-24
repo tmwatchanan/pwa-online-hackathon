@@ -1,0 +1,8 @@
+{
+  "name": "workbox",
+  "description": "Build and generate the manifest file",
+  "private": true,
+  "scripts": {
+    "build": "workbox-cli generate:sw"
+  }
+}
