@@ -83,6 +83,26 @@
       </div>
 
     </div>
+    
+    <script>
+      (function ($, undefined) {
+        $(function() {
+          self.addEventListener('async', event => {
+            if (event.tag === 'replay' || event.tag === 'workbox') {
+              event.waitUntil(queue.replayRequests());
+            }
+          });
+
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+            .then(() => console.log('serviceWorker is registered'))
+            .catch(function(err) {
+              console.error('Unable to register service worker.', err);
+            });
+          }
+        });
+      })(jQuery);
+    </script>
 
   </body>
 </html>
