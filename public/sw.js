@@ -110,3 +110,4 @@ const fileManifest = [
 
 const workboxSW = new self.WorkboxSW();
 workboxSW.precache(fileManifest);
+workboxSW.router.registerRoute(/__\/firebase\/.*\.js$/, workboxSW.strategies.networkFirst());
