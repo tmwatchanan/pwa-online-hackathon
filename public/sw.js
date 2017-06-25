@@ -64,11 +64,11 @@ const fileManifest = [
   },
   {
     "url": "/index.html",
-    "revision": "74f3f5890871f5452a5a9b7cdb0f7475"
+    "revision": "ff2daf7b1649f859b9360972caf2d2a7"
   },
   {
     "url": "/js/application.js",
-    "revision": "550c746bcb1e3f65fd58c061f6dc671c"
+    "revision": "e785253db2fa12764f353acbe3e975df"
   },
   {
     "url": "/js/bootstrap.js",

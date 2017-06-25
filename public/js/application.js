@@ -45,8 +45,38 @@ function createMessage(roomName, message) {
     }
 }
 
-$(function(){
+function retrieveMessages(roomName) {
+  roomName = $('#readRoomNameInput').val();
+  $('#messagesRow').empty();
+  var ref = firebase.database().ref('/rooms/' + roomName + '/messages/').once('value').then(function(snapshot) {
+    var prospectId = snapshot.key ;
 
+    snapshot.forEach(function(snapshot1) {
+      console.log(snapshot1.key); // e.g. "http://..."
+      console.log(snapshot1.val().message); // "pne"
+      var createdAt = snapshot1.val().createdAt;
+      var message = snapshot1.val().message;
+      $('#messagesRow').append('<tr><td>' + createdAt + '</td><td>' + message + '</td></tr>');
+    });
+  });
+}
+
+function retrieveRooms() {
+  roomName = $('#readRoomNameInput').val();
+  $('#roomsRow').empty();
+  var ref = firebase.database().ref('/rooms/').once('value').then(function(snapshot) {
+    var prospectId = snapshot.key ;
+
+    snapshot.forEach(function(snapshot1) {
+      console.log(snapshot1.key); // e.g. "http://..."
+      var room = snapshot1.key;
+      $('#roomsRow').append('<tr><td>' + room + '</td></tr>');
+    });
+  });
+}
+
+$(function(){
+  retrieveRooms();
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var isAnonymous = user.isAnonymous;
