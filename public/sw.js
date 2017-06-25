@@ -64,7 +64,7 @@ const fileManifest = [
   },
   {
     "url": "/index.html",
-    "revision": "31fdf1f4f18b006780de3cf18bcbbcd1"
+    "revision": "03c7930c605e7f132d1da6a2bd83cc2b"
   },
   {
     "url": "/js/application.js",
@@ -104,15 +104,15 @@ const fileManifest = [
   },
   {
     "url": "/OneSignalSDKUpdaterWorker.js",
-    "revision": "a4f31b84d594856359f740d4fa3f088d"
+    "revision": "a7f532b78e793c79705009940cd518d5"
   },
   {
     "url": "/OneSignalSDKWorker.js",
-    "revision": "a4f31b84d594856359f740d4fa3f088d"
+    "revision": "a7f532b78e793c79705009940cd518d5"
   },
   {
     "url": "/template.html",
-    "revision": "14733a65985df24004aa3be128603490"
+    "revision": "03c7930c605e7f132d1da6a2bd83cc2b"
   }
 ];
 
