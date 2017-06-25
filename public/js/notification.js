@@ -18,7 +18,3 @@ function SubscribeToRoom(roomName, userId) {
         },
     }]);
 }
-
-function sendNotification(messageJson) {
-  $.post("https://onesignal.com/api/v1/notifications", messageJson)
-}
