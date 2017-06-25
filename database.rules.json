@@ -5,8 +5,9 @@
       "$roomName": {
         ".read": true,
         "message": {
+          ".write": "auth.uid == $ownerId",
           "$messageId": {
-
+            ".read": true
           }
         }
       }
