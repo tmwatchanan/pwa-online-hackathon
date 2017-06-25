@@ -13,7 +13,7 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.sendNotification = functions.https.onRequest((request, response) => {
-  var data = request.body;
+  var data = request.body
 
   var options = {
     method: 'POST',

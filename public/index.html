@@ -17,7 +17,21 @@
     <script defer src="/__/firebase/init.js"></script>
 
     <!-- OneSignal -->
-    <script defer src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+        appId: "00166562-147d-4eaa-95ae-49788c7c9744",
+        autoRegister: false,
+        notifyButton: {
+          enable: true /* Set to false to hide */
+        },
+        welcomeNotification: {
+          title: 'CMU.Today - Realtime Check-in',
+          message: 'Welcome to our site! We will send you notifications.'
+        },
+      }]);
+    </script>
 
     <!-- Material Design fonts -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
