@@ -11,6 +11,11 @@ function createRoom(roomName) {
 }
 
 function createMessage(roomName, message) {
+  roomName = $('#sengMsgRoomName').val();
+  message = $('#sendMsgMessage').val();
+
+  var msgContent = "ส่งจากห้อง" + roomName;
+
     var user = firebase.auth().currentUser
     if(user) {
         var postData = {
@@ -23,16 +28,16 @@ function createMessage(roomName, message) {
         var updates = {};
         updates['/rooms/' + roomName + '/messages/' + newPostKey] = postData;
 
-        var message = { 
+        var notificationMessage = { 
           app_id: "00166562-147d-4eaa-95ae-49788c7c9744",
-          contents: {"ส่งจาก createMessage": "English Message"},
+          contents: {msgContent: message},
           filters: [
               {
                 "room_name": roomName
               }
           ]
         };
-        sendNotification(message);
+        sendNotification(notificationMessage);
 
         return firebase.database().ref().update(updates);
     }
