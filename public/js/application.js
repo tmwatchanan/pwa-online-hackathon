@@ -1,7 +1,12 @@
+$('#createRoomButton').click(function(){
+  createRoom($(this)[0].value, 123);
+})
+
 function createRoom(roomName, ownerId) {
   firebase.database().ref('rooms/' + roomName).set({
     ownerId: ownerId,
   });
+  SubscribeToRoom(roomName);
 }
 
 function createMessage(roomName, message) {
