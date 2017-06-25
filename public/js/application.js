@@ -23,6 +23,17 @@ function createMessage(roomName, message) {
         var updates = {};
         updates['/rooms/' + roomName + '/' + newPostKey] = postData;
 
+        var message = { 
+          app_id: "00166562-147d-4eaa-95ae-49788c7c9744",
+          contents: {"ส่งจาก createMessage": "English Message"},
+          filters: [
+              {
+                "room_name": roomName
+              }
+          ]
+        };
+        sendNotification(message);
+
         return firebase.database().ref().update(updates);
     }
 }
