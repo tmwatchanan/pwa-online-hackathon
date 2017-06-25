@@ -18,10 +18,10 @@ function createMessage(roomName, message) {
             createdAt: new Date().toLocaleString()
         };
 
-        var newPostKey = firebase.database().ref().child('rooms/' + roomName).push().key;
+        var newPostKey = firebase.database().ref().child('rooms/' + roomName + '/messages').push().key;
 
         var updates = {};
-        updates['/rooms/' + roomName + '/' + newPostKey] = postData;
+        updates['/rooms/' + roomName + '/messages/' + newPostKey] = postData;
 
         var message = { 
           app_id: "00166562-147d-4eaa-95ae-49788c7c9744",
@@ -39,7 +39,7 @@ function createMessage(roomName, message) {
 }
 
 $(function(){
-    
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var isAnonymous = user.isAnonymous;
