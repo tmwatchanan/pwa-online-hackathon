@@ -64,11 +64,11 @@ const fileManifest = [
   },
   {
     "url": "/index.html",
-    "revision": "03c7930c605e7f132d1da6a2bd83cc2b"
+    "revision": "a74856d45df9f194f33edd891d919c1b"
   },
   {
     "url": "/js/application.js",
-    "revision": "c78fd7899545d8912628c646c34962a9"
+    "revision": "b869f35d2aca521d7dce0ec07da56308"
   },
   {
     "url": "/js/bootstrap.js",
@@ -89,6 +89,10 @@ const fileManifest = [
   {
     "url": "/js/material.min.js",
     "revision": "10e934daceea8cb2a461929059067cf3"
+  },
+  {
+    "url": "/js/notification.js",
+    "revision": "72bed31a64401f8ec8ac7312901695ee"
   },
   {
     "url": "/js/npm.js",

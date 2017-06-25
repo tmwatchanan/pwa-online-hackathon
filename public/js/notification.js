@@ -19,6 +19,7 @@ function SubscribeToRoom(roomName, userId) {
     }]);
 }
 
+
 function sendNotification(messageJson) {
-  $.post("https://onesignal.com/api/v1/notifications", messageJson)
+  $.post("https://us-central1-pwa-online-hackathon-ed6e7.cloudfunctions.net/sendNotification", messageJson)
 }

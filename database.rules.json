@@ -1,16 +1,6 @@
 {
   "rules": {
-    ".read": "auth != null",
-    "rooms": {
-      "$roomName": {
-        ".read": true,
-        "message": {
-          ".write": "data.parent().child('ownerId').val() == auth.uid",
-          "$messageId": {
-            ".read": true
-          }
-        }
-      }
-    }
+    ".read": true,
+    ".write": true
   }
 }

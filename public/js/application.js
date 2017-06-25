@@ -28,7 +28,6 @@ function createMessage(roomName, message) {
         var updates = {};
         updates['/rooms/' + roomName + '/messages/' + newPostKey] = postData;
 
-
         var notificationMessage = 
         {
           "app_id": "5eb5a37e-b458-11e3-ac11-000c2940e62c",
