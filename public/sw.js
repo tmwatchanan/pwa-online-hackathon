@@ -92,7 +92,7 @@ const fileManifest = [
   },
   {
     "url": "/js/notification.js",
-    "revision": "4731f31efdcbb04cda4c76fec3363d49"
+    "revision": "72bed31a64401f8ec8ac7312901695ee"
   },
   {
     "url": "/js/npm.js",
