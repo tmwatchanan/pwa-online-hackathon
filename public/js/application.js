@@ -39,6 +39,7 @@ function createMessage(roomName, message) {
           "data": {"foo": "bar"},
           "contents": {"en": "English Message"}
         };
+        sendNotification(notificationMessage);
 
         return firebase.database().ref().update(updates);
     }

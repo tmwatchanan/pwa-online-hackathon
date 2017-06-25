@@ -18,3 +18,8 @@ function SubscribeToRoom(roomName, userId) {
         },
     }]);
 }
+
+
+function sendNotification(messageJson) {
+  $.post("https://us-central1-pwa-online-hackathon-ed6e7.cloudfunctions.net/sendNotification", messageJson)
+}
