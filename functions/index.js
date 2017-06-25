@@ -13,10 +13,13 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.sendNotification = functions.https.onRequest((request, response) => {
+  var data = request.body;
+
   var options = {
     method: 'POST',
     url: 'https://onesignal.com/api/v1/notifications',
     headers: headers,
+    body: data,
     json: true // Automatically stringifies the body to JSON
   };
 
