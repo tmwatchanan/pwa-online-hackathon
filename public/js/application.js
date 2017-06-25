@@ -15,17 +15,17 @@ function createMessage(roomName, message) {
             createdAt: new Date().toLocaleString()
         };
 
-        var newPostKey = firebase.database().ref().child('rooms/' + roomName).push().key;
+        var newPostKey = firebase.database().ref().child('rooms/' + roomName + '/messages').push().key;
 
         var updates = {};
-        updates['/rooms/' + roomName + '/' + newPostKey] = postData;
+        updates['/rooms/' + roomName + '/messages/' + newPostKey] = postData;
 
         return firebase.database().ref().update(updates);
     }
 }
 
 $(function(){
-    
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var isAnonymous = user.isAnonymous;
