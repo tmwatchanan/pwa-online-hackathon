@@ -45,39 +45,26 @@
       <a class="navbar-brand" href="#">Realtime Check-in</a>
     </nav>
 
-    <!-- Loading -->
-    <div class="container" id="loading">
-      <h2>Loading</h2>
-    </div>
-
-    <!-- Landing Page -->
-    <div class="container" id="landing">
-      <h2>Landing</h2>
-    </div>
-
-    <!-- Live Blog -->
-    <div class="container" id="blog">
-      <h2>Blog</h2>
-    </div>
-
+    <h2>Create a New Room</h2>
     <div class="form-group label-static">
-      <label for="roomNameInput" class="control-label">Join Room Name:</label>
-      <input type="text" class="form-control" id="roomNameInput" placeholder="placeholder attribute">
+      <label for="roomNameInput" class="control-label">Join Room:</label>
+      <input type="text" class="form-control" id="roomNameInput" placeholder="room name">
       <p class="help-block">Please input your room name</p>
     </div>
     <button class="btn btn-default" id="createRoomButton" data-ripple-color="#F0F0F0" onclick="createRoom('test')">Create a Room</button>
 
+    <h2>Send Message to Room</h2>
     <div class="form-group label-static">
       <label for="sengMsgRoomName" class="control-label">Send to Room:</label>
-      <input type="text" class="form-control" id="sengMsgRoomName" placeholder="placeholder attribute">
-      <p class="help-block">Please input room name</p>
+      <input type="text" class="form-control" id="sengMsgRoomName" placeholder="room name">
+      <!--<p class="help-block">Please input room name</p>-->
     </div>
     <div class="form-group label-static">
       <label for="sendMsgMessage" class="control-label">Send Message:</label>
-      <input type="text" class="form-control" id="sendMsgMessage" placeholder="placeholder attribute">
-      <p class="help-block">Please input your message</p>
+      <input type="text" class="form-control" id="sendMsgMessage" placeholder="message">
+      <!--<p class="help-block">Please input your message</p>-->
     </div>
-    <button class="btn btn-default" id="sendMessageButton" data-ripple-color="#F0F0F0" onclick="createMessage('test', 'msg')">Create a Room</button>
+    <button class="btn btn-default" id="sendMessageButton" data-ripple-color="#F0F0F0" onclick="createMessage('test', 'msg')">Send a Message</button>
     
     <script>
       (function ($, undefined) {

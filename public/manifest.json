@@ -3,8 +3,8 @@
   "short_name": "Realtime Q&A",
   "start_url": "./",
   "display": "standalone",
-  "theme_color": "#3f51b5",
-  "background_color": "#3f51b5",
+  "theme_color": "#009688",
+  "background_color": "#009688",
   "icons": [
     {
       "src": "images/manifest/qna_icon-192x192.png",
