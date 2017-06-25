@@ -5,6 +5,7 @@
       "$roomName": {
         ".read": true,
         "message": {
+          ".write": "data.parent().child('ownerId').val() == auth.uid",
           "$messageId": {
             ".read": true
           }
