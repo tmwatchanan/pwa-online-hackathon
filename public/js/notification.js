@@ -9,7 +9,7 @@ function SubscribeToRoom(roomName) {
         appId: "00166562-147d-4eaa-95ae-49788c7c9744",
         autoRegister: false,
         notifyButton: {
-            enable: true /* Set to false to hide */
+            enable: hide /* Set to false to hide */
         },
         welcomeNotification: {
             title: 'CMU.Today - Realtime Check-in',
