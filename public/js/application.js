@@ -1,22 +1,47 @@
-function createRoom(roomName, ownerId) {
-  firebase.database().ref('rooms/' + roomName).set({
-    ownerId: ownerId,
-  });
-}
+$(function(){
 
-function createMessage(roomName, message) {
-  var postData = {
-    message: message,
-    createdAt: new Date().toLocaleString()
-  };
+    function createRoom(roomName) {
+        var user = firebase.auth().currentUser
+        if(user) {
+            firebase.database().ref('rooms/' + roomName).set({
+                ownerId: user.uid,
+            });
+        }
+    }
 
-  var newPostKey = firebase.database().ref().child('rooms/' + roomName).push().key;
+    function createMessage(roomName, message) {
+        var user = firebase.auth().currentUser
+        if(user) {
+            var postData = {
+                message: message,
+                createdAt: new Date().toLocaleString()
+            };
 
-  var updates = {};
-  updates['/rooms/' + roomName + '/' + newPostKey] = postData;
+            var newPostKey = firebase.database().ref().child('rooms/' + roomName).push().key;
 
-  return firebase.database().ref().update(updates);
-}
+            var updates = {};
+            updates['/rooms/' + roomName + '/' + newPostKey] = postData;
 
+            return firebase.database().ref().update(updates);
+        }
+    }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            console.log(uid)
+        } else {
+            console.log("Can not login anonymously")
+        }
+    });
+
+    firebase.auth().signInAnonymously().catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode + ":" +errorMessage)
+    });
+
+});
 
 $.material.init()
