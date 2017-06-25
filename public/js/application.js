@@ -1,37 +1,34 @@
-$("#createRoomButton").click(function(){
-    createRoom('test');
-});
+function createRoom(roomName) {
+    roomName = $('#roomNameInput').val();
+    var user = firebase.auth().currentUser
+    // if(user) {
+        firebase.database().ref('rooms/' + roomName).set({
+            ownerId: 1234,
+        });
+        SubscribeToRoom(roomName, user.ownerId);
+        console.log('created a room in firebase');
+    // }
+}
+
+function createMessage(roomName, message) {
+    var user = firebase.auth().currentUser
+    if(user) {
+        var postData = {
+            message: message,
+            createdAt: new Date().toLocaleString()
+        };
+
+        var newPostKey = firebase.database().ref().child('rooms/' + roomName).push().key;
+
+        var updates = {};
+        updates['/rooms/' + roomName + '/' + newPostKey] = postData;
+
+        return firebase.database().ref().update(updates);
+    }
+}
 
 $(function(){
-
-    function createRoom(roomName) {
-      roomName = $('#roomNameInput').val();
-      
-        var user = firebase.auth().currentUser
-        if(user) {
-            firebase.database().ref('rooms/' + roomName).set({
-                ownerId: user.uid,
-            });
-        }
-    }
-
-    function createMessage(roomName, message) {
-        var user = firebase.auth().currentUser
-        if(user) {
-            var postData = {
-                message: message,
-                createdAt: new Date().toLocaleString()
-            };
-
-            var newPostKey = firebase.database().ref().child('rooms/' + roomName).push().key;
-
-            var updates = {};
-            updates['/rooms/' + roomName + '/' + newPostKey] = postData;
-
-            return firebase.database().ref().update(updates);
-        }
-    }
-
+    
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var isAnonymous = user.isAnonymous;
