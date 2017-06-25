@@ -1,13 +1,13 @@
 function createRoom(roomName) {
     roomName = $('#roomNameInput').val();
     var user = firebase.auth().currentUser
-    // if(user) {
+    if(user) {
         firebase.database().ref('rooms/' + roomName).set({
-            ownerId: 1234,
+            ownerId: user.uid,
         });
-        SubscribeToRoom(roomName, user.ownerId);
+        SubscribeToRoom(roomName, user.uid);
         console.log('created a room in firebase');
-    // }
+    }
 }
 
 function createMessage(roomName, message) {
