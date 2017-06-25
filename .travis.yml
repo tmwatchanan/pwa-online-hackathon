@@ -13,19 +13,13 @@ addons:
       - google-chrome-stable
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
-  - xvfb-run wct
   - xvfb-run npm test
   - xvfb-run npm run test:integration
 before_script:
-  - npm install -g bower
-  - npm install -g polymer-cli
   - npm install firebase-tools
-  - npm install web-component-tester
-  - bower install
   - npm install
-  - polymer install
 after_success:
   - firebase deploy --token "$FIREBASE_TOKEN"
 notifications:
