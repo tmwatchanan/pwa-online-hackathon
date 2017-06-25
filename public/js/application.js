@@ -28,14 +28,17 @@ function createMessage(roomName, message) {
         var updates = {};
         updates['/rooms/' + roomName + '/messages/' + newPostKey] = postData;
 
-        var notificationMessage = { 
-          app_id: "00166562-147d-4eaa-95ae-49788c7c9744",
-          contents: {msgContent: message},
-          filters: [
-              {
-                "room_name": roomName
-              }
-          ]
+
+        var notificationMessage = 
+        {
+          "app_id": "5eb5a37e-b458-11e3-ac11-000c2940e62c",
+          "filters": [
+            {
+              "room_name": roomName
+            }
+          ],
+          "data": {"foo": "bar"},
+          "contents": {"en": "English Message"}
         };
         sendNotification(notificationMessage);
 
