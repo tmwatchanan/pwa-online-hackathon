@@ -6,6 +6,17 @@
     <title>Welcome to Firebase Hosting</title>
 
     <link rel="manifest" href="./manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+        appId: "00166562-147d-4eaa-95ae-49788c7c9744",
+        autoRegister: false,
+        notifyButton: {
+          enable: true /* Set to false to hide */
+        }
+      }]);
+    </script>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.1.3/firebase-app.js"></script>
